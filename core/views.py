@@ -21,7 +21,8 @@ def signup(request):
         messages.info(request, 'This username is taken')
         return redirect('signup')
       else:
-        User = User.objects.create_user(username=username, password=password)
+        user = User.objects.create_user(username=username, password=password)
+        user.save()
     else:
       messages.info(request, 'Passwords do not match')
       return redirect('signup')
