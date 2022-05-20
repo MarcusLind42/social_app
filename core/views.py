@@ -49,9 +49,14 @@ def signin (request):
     if user is not None:
       auth.login(request, user)
       return redirect('/')
+
     else:
       messages.info(request, 'Username or Password does not match')
       return redirect('signin')
 
   else:
     return render(request, 'signin.html')
+
+def logout(request):
+  auth.logout(request)
+  return redirect('signin')
