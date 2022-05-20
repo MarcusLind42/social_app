@@ -1,3 +1,4 @@
+from urllib.request import Request
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
@@ -7,6 +8,8 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 @login_required(login_url='signin')
 def index(request):
+  user_object = User.objects.get(username=Request.user.username)
+  user_profile = Profile.objects.get(user=user_object)
   return render(request, 'index.html')
 
 def signup(request):
@@ -68,6 +71,9 @@ def logout(request):
 
 @login_required(login_url='signin')
 def settings(request):
+
+
+
   user_profile = Profile.objects.get(user=request.user)
 
   if request.method == 'POST':
@@ -94,3 +100,7 @@ def settings(request):
     return redirect('settings')
     
   return render(request, 'settings.html', {'user_profile': user_profile})
+
+@login_required(login_url='signin')
+def upload(request):
+  pass
