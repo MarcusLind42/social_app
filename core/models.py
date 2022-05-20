@@ -11,6 +11,8 @@ class Profile(models.Model):
   bio = models.TextField(blank=True)
   profileimg = models.ImageField(upload_to='profile_images', default='blank-profile-image.jpeg')
   location = models.CharField(max_length=100, blank=True)
+  firstname = models.CharField(max_length=20, blank=True)
+  lastname = models.CharField(max_length=20, blank=True)
 
   def __str__(self):
       return self.user.username
