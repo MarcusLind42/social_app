@@ -1,8 +1,9 @@
+import re
 from urllib.request import Request
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-from .models import Profile, Post
+from .models import Profile, Post, LikePost
 from django.contrib.auth.decorators import login_required
 
 # Create your views here.
@@ -122,4 +123,12 @@ def upload(request):
 
 @login_required(login_url='signin')
 def like_post(request):
-  pass
+  username = request.user.username
+  post_id = request.GET.get('post_id')
+
+  post = Post.objects.get(id=post_id)
+
+  like_filter = LikePost.objects.filter(post_id=post_id, username=username).first()
+
+  if like_filter == None:
+    
