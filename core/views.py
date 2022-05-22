@@ -104,6 +104,8 @@ def settings(request):
 
 @login_required(login_url='signin')
 def upload(request):
+
+
   
   if request.method == 'POST':
     user = request.user.username
@@ -117,3 +119,7 @@ def upload(request):
     
   else:
     return redirect('/')
+
+@login_required(login_url='signin')
+def like_post(request):
+  pass
