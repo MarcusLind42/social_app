@@ -99,7 +99,7 @@ def settings(request):
       user_profile.bio = bio
       user_profile.location = location
       user_profile.save()
-    return redirect('settings')
+    return redirect('/')
     
   return render(request, 'settings.html', {'user_profile': user_profile})
 
@@ -132,8 +132,8 @@ def like_post(request):
 
   if like_filter == None:
     new_like = LikePost.objects.create(post_id=post_id, username=username)
-    new_like.save()
     post.no_of_likes = post.no_of_likes+1
+    new_like.save()
     post.save()
     return redirect('/')
   else:
