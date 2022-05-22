@@ -69,13 +69,20 @@
                                             <path d="M9 13h2v5a1 1 0 11-2 0v-5z" />
                                         </svg>
                                     </div>
-
+                                    
+                                    <form>
                                     <p class="my-3 leading-6"> Upload a picture </p>
                                     <div uk-form-custom>
-                                        <input type="file">
+                                        <input type="file" name='image_upload'>
                                         <a href="#" class="button soft-warning small"> Choose file</a>
                                     </div>
+                                    <div>
+                                        <textarea class='button soft-warning small' name='caption' placeholder=' Your caption here!'></textarea>
+                                    </div>
+                                    <br />
+                                    <button class='button bg-blue-700' type='submit'>Upload</button>
                                 </div>
+                            </form>
     
                                 <div class="uk-flex uk-flex-column choose-upload" hidden>
                                     <div class="mx-auto flex flex-col h-24 items-center justify-center relative w-full rounded-lg">
@@ -88,9 +95,6 @@
                                             <input type="text" class="uk-input uk-form-small  bg-gray-200 " style="box-shadow:none" placeholder="Paste link">
                                         </div>
                                     </form>
-                                    <a href="#" class="uk-text-muted mt-3 uk-link"
-                                        uk-toggle="target: .choose-upload ; animation: uk-animation-slide-left-small, uk-animation-slide-right-medium; queued: true">
-                                        Or Upload Video </a>
                                 </div>
     
                             </div>
