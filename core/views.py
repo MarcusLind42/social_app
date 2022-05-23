@@ -158,3 +158,7 @@ def profile(request, pk):
     'user_post_length': user_post_length,
   })
 
+@login_required(login_url='signin')
+def follow(request):
+  pass
+
