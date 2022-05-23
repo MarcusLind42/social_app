@@ -215,7 +215,7 @@
                                             <p>Be the first one to like this post!</p>
                                             {% elif post.no_of_likes == 1 %}
                                             <p>Liked by {{post.no_of_likes}} person</p>
-                                            {% elif %}
+                                            {% else %}
                                             <p>Liked by {{post.no_of_likes}} people</p>
                                             {% endif %}
 
