@@ -144,3 +144,6 @@ def like_post(request):
     post.save()
     return redirect('/')
 
+def profile(request):
+  return render(request, 'profile.html')
+
