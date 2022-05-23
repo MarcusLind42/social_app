@@ -151,11 +151,10 @@ def profile(request, pk):
   user_post_length = len(user_posts)
 
 
-  context = {
+  return render(request, 'profile.html', {
     'user_object': user_object,
     'user_profile': user_profile,
     'user_posts': user_posts,
     'user_post_length': user_post_length,
-  }
-  return render(request, 'profile.html')
+  })
 
