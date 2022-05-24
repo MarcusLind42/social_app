@@ -6,7 +6,7 @@ from django.contrib import messages
 from .models import Profile, Post, LikePost, FollowersCount
 from django.contrib.auth.decorators import login_required
 
-# Timestamp = 3:14:00
+# Timestamp = 4:00:00
 
 # Create your views here.
 @login_required(login_url='signin')
