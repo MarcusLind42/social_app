@@ -217,3 +217,6 @@ def follow(request):
       return redirect('/profile/'+user)
   else:
     return redirect('/')
+
+def search(request):
+  return render(request, 'search.hmtl')
