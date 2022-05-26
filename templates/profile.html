@@ -3,15 +3,13 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="" />
     <meta name="keywords" content="" />
 	<title>{{user_profile.user.username}}</title>
-   <!-- <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16"> -->
-    
+  <!-- <link rel="icon" href="images/fav.png" type="image/png" sizes="16x16"> -->
     <link rel="stylesheet" href="{% static 'css/main.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/color.css' %}">
@@ -36,6 +34,7 @@
 					{% else %}
 					<span style="color: white; font-size: 27px;"><b>{{user_post_length}} Posts</b></span>
 					{% endif %}
+
 					{% if user_followers == 0 %}
 					<span style="color: white; font-size: 27px;"><b>0 Followers</b></span>
 					{% elif user_followers == 1 %}
@@ -43,6 +42,7 @@
 					{% elif user_followers > 1 %}
 					<span style="color: white; font-size: 27px;"><b>{{user_followers}} Followers</b></span>
 					{% endif %}
+
 					{% if user_following == 0 %}
 					<span style="color: white; font-size: 27px;"><b>0 Following</b></span>
 					{% elif user_following == 1 %}
@@ -82,8 +82,8 @@
 							<div class="timeline-info">
 								<ul>
 									<li class="admin-name">
-									  <h5 style="color: black;white-space: nowrap; width: 110px; font-size: 27px;"><b>@{{user_profile.user.username}}</b><!--<i class="fa fa-check-circle" style="color: #48dbfb;" aria-hidden="true"></i>--></h5>
-									  <!--<span>Group Admin</span>-->
+									<h5 style="color: black;white-space: nowrap; width: 110px; font-size: 27px;"><b>@{{user_profile.user.username}}</b><!--<i class="fa fa-check-circle" style="color: #48dbfb;" aria-hidden="true"></i>--></h5>
+									<!--<span>Group Admin</span>-->
 									</li>
 									<!--<li>
 										<a class="" href="javascript:void(0)" title="" data-ripple="">Go live!</a>
@@ -126,16 +126,6 @@
 									
 								</aside>
 							</div><!-- sidebar -->
-							
-
-
-
-
-
-
-
-
-
 							<div class="col-lg-6">
 								<div class="central-meta">
 									<ul class="photos">
@@ -145,16 +135,12 @@
 												<img src="{{post.image.url}}" style="height: 250px; width: 300px;" alt=""></a>
 										</li>
 										{% endfor %}
-
-										
-								
 									</ul>
 									<!--<div class="lodmore"><button class="btn-view btn-load-more"></button></div>-->
 								</div><!-- photos -->
 							</div><!-- centerl meta -->
 							<div class="col-lg-3">
 								<aside class="sidebar static">
-									
 								</aside>
 							</div><!-- sidebar -->
 						</div>	
@@ -163,9 +149,6 @@
 			</div>
 		</div>	
 	</section>
-
-	
-	
 	<script data-cfasync="false" src="{% static '../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script><script src="{% static 'js/main.min.js' %}"></script>
 	<script src="{% static 'js/script.js' %}"></script>
 
