@@ -219,4 +219,21 @@ def follow(request):
     return redirect('/')
 
 def search(request):
-  return render(request, 'search.html')
+  user_object = User.objects.get(username=request.user.username)
+  user_profile = Profile.objects.get(user=user_object)
+
+  if request.method == 'POST':
+    username = request.POST['username']
+    username_object = User.objects.filter(username__icontain=username)
+
+    username_profile = []
+    username_profile_list = []
+
+    for users in username_object:
+      username_profile.append(users.id)
+
+    for ids in username_profile:
+      profile_lists = Profile.objects.filter(id_user=ids)
+  return render(request, 'search.html', {
+    'user_profile': user_profile,
+  })
