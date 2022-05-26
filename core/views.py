@@ -7,6 +7,10 @@ from .models import Profile, Post, LikePost, FollowersCount
 from django.contrib.auth.decorators import login_required
 from itertools import chain
 
+'''
+
+
+'''
 # Create your views here.
 @login_required(login_url='signin')
 def index(request):
