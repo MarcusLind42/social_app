@@ -36,8 +36,21 @@
 					{% else %}
 					<span style="color: white; font-size: 27px;"><b>{{user_post_length}} Posts</b></span>
 					{% endif %}
-					<span style="color: white; font-size: 27px;"><b>1.7m followers</b></span>
-					<span style="color: white; font-size: 27px;"><b>3.5k following</b></span>
+					{% if user_followers == 0 %}
+					<span style="color: white; font-size: 27px;"><b>0 Followers</b></span>
+					{% elif user_followers == 1 %}
+					<span style="color: white; font-size: 27px;"><b>1 Follower</b></span>
+					{% elif user_followers > 1 %}
+					<span style="color: white; font-size: 27px;"><b>{{user_followers}} Followers</b></span>
+					{% endif %}
+					{% if user_following == 0 %}
+					<span style="color: white; font-size: 27px;"><b>0 Following</b></span>
+					{% elif user_following == 1 %}
+					<span style="color: white; font-size: 27px;"><b>1 Following</b></span>
+					{% elif user_following > 1 %}
+					<span style="color: white; font-size: 27px;"><b>{{user_following}} Following</b></span>
+					{% endif %}
+					<span style="color: white; font-size: 27px;"><b>{{users_following}}</b></span>
 					<form action='/follow' method='POST'>
 						{% csrf_token %}
 						<input type='hidden' value='{{user.username}}' name='follower' />
