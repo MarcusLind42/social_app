@@ -7,10 +7,6 @@ from .models import Profile, Post, LikePost, FollowersCount
 from django.contrib.auth.decorators import login_required
 from itertools import chain
 
-'''
-
-
-'''
 # Create your views here.
 @login_required(login_url='signin')
 def index(request):
@@ -75,8 +71,6 @@ def signup(request):
     else:
       messages.info(request, 'Passwords do not match')
       return redirect('signup')
-
-
   else:
     return render(request, 'signup.html')
 
