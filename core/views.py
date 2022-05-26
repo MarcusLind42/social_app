@@ -219,4 +219,4 @@ def follow(request):
     return redirect('/')
 
 def search(request):
-  return render(request, 'search.hmtl')
+  return render(request, 'search.html')
