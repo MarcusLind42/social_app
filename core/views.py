@@ -6,6 +6,7 @@ from django.contrib import messages
 from .models import Profile, Post, LikePost, FollowersCount
 from django.contrib.auth.decorators import login_required
 from itertools import chain
+import random
 
 # Create your views here.
 @login_required(login_url='signin')
@@ -39,9 +40,19 @@ def index(request):
   new_suggestions_list = [x for x in list(all_users) if (x not in list(user_following_all()))]
   current_user = User.objects.filter(username=request.user.username)
   final_suggestions_list = [x for x in list(new_suggestions_list) if (x not in list(current_user))]
-  
-  return render(request, 'index.html', {
+  random.shuffle(final_suggestions_list)
 
+  username_profile = []
+  username_profile_list = []
+
+  for users in final_suggestions_list:
+    username_profile.append(users.id)
+
+  for ids in username_profile:
+    profile_lists = Profile.objects.filter(id_user=ids)
+
+
+  return render(request, 'index.html', {
     'user_profile': user_profile,
     'posts': feed_list,
     })
