@@ -32,6 +32,12 @@ def index(request):
   all_users = User.objects.all()
   user_following_all = []
 
+  for user in user_following:
+    user_list = User.objects.get(username=user.user)
+    user_following_all.append(user_list)
+
+  new_suggestions_list = [x for x in list(all_users) if (x not in list(user_following_all()))]
+
   return render(request, 'index.html', {'user_profile': user_profile, 'posts': feed_list})
 
 def signup(request):
