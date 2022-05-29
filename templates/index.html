@@ -137,10 +137,7 @@
                     </div>
                 </div>
             </header>
-            <div class="container m-auto">
-                <!--<h1 class="lg:text-2xl text-lg font-extrabold leading-none text-gray-900 tracking-tight mb-5"> Feed </h1>--->
-                <div class="lg:flex justify-center lg:space-x-10 lg:space-y-0 space-y-5">
-                    <!-- left sidebar-->
+            <div class="container m-auto">>
                     <div class="space-y-5 flex-shrink-0 lg:w-7/12">
                         <!-- post 1-->
                         {% for post in posts reversed %}
@@ -155,41 +152,6 @@
                                     </a>
                                     <span class="block capitalize font-semibold "> <a href='/profile/{{post.user}}'>{{post.user}}</a></span>
                                 </div>
-                                <div>
-                                <a href="#"> <i class="icon-feather-more-horizontal text-2xl hover:bg-gray-200 rounded-full p-2 transition -mr-1 "></i> </a>
-                                <div class="bg-white w-56 shadow-md mx-auto p-2 mt-12 rounded-md text-gray-500 hidden text-base border border-gray-100  " uk-drop="mode: hover;pos: top-right">
-                                    <ul class="space-y-1">
-                                    <li> 
-                                        <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md ">
-                                        <i class="uil-share-alt mr-1"></i> Share
-                                        </a> 
-                                    </li>
-                                    <li> 
-                                        <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md ">
-                                        <i class="uil-edit-alt mr-1"></i>  Edit Post 
-                                        </a> 
-                                    </li>
-                                    <li> 
-                                        <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md ">
-                                        <i class="uil-comment-slash mr-1"></i>   Disable comments
-                                        </a> 
-                                    </li> 
-                                    <li> 
-                                        <a href="#" class="flex items-center px-3 py-2 hover:bg-gray-200 hover:text-gray-800 rounded-md ">
-                                        <i class="uil-favorite mr-1"></i>  Add favorites 
-                                        </a> 
-                                    </li>
-                                    <li>
-                                        <hr class="-mx-2 my-2 ">
-                                    </li>
-                                    <li> 
-                                        <a href="#" class="flex items-center px-3 py-2 text-red-500 hover:bg-red-100 hover:text-red-500 rounded-md ">
-                                        <i class="uil-trash-alt mr-1"></i>  Delete
-                                        </a> 
-                                    </li>
-                                    </ul>
-                                </div>
-                            </div>
                             </div>
                             <div uk-lightbox>
                                 <a href="{{post.image.url}}">  
